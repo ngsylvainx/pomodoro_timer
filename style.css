@@ -1,0 +1,42 @@
+/* style.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+}
+
+.timer-container {
+    border: 2px solid #8a2be2;
+    border-radius: 15px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #8a2be2 50%, #000 50%);
+    text-align: center;
+    width: 200px;
+}
+
+.timer {
+    font-size: 48px;
+    color: #fff;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8a2be2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #6a1bb4;
+}
