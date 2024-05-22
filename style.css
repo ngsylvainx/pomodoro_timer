@@ -1,25 +1,91 @@
 /* style.css */
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --primary-color: #007aff;
+    --secondary-color: #f5f5f5;
+    --button-bg-color: #007aff;
+    --button-active-bg-color: #005bb5;
+    --task-bg-color: #fff;
+    --task-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+    --background-color: #1e1e1e;
+    --text-color: #f5f5f5;
+    --primary-color: #4cd137;
+    --secondary-color: #2f2f2f;
+    --button-bg-color: #4cd137;
+    --button-active-bg-color: #3e8f35;
+    --task-bg-color: #333;
+    --task-shadow-color: rgba(255, 255, 255, 0.1);
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #000;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+    width: 300px;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+#task-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: calc(100% - 24px);
+    margin-bottom: 10px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#add-task-button, #theme-toggle-button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--button-bg-color);
+    color: white;
+    cursor: pointer;
+    width: calc(100% - 24px);
 }
 
 .timer-container {
-    border: 2px solid #8a2be2;
-    border-radius: 15px;
-    padding: 20px;
-    background: linear-gradient(to bottom, #8a2be2 50%, #000 50%);
-    text-align: center;
+    position: relative;
     width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background: conic-gradient(var(--primary-color) 0%, var(--background-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px var(--task-shadow-color);
 }
 
-.timer {
+.progress-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+}
+
+#time-display {
     font-size: 48px;
-    color: #fff;
 }
 
 .controls {
@@ -30,13 +96,50 @@ button {
     margin: 5px;
     padding: 10px;
     border: none;
-    border-radius: 5px;
-    background-color: #8a2be2;
+    border-radius: 8px;
+    background-color: var(--button-bg-color);
     color: white;
     font-size: 16px;
     cursor: pointer;
+    width: calc(100% - 14px);
 }
 
 button:active {
-    background-color: #6a1bb4;
+    background-color: var(--button-active-bg-color);
+}
+
+button.pause {
+    background-color: #ff3b30;
+}
+
+.task-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#task-list li {
+    padding: 10px;
+    background-color: var(--task-bg-color);
+    margin: 5px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px var(--task-shadow-color);
+}
+
+#task-list li span {
+    flex-grow: 1;
+}
+
+.delete-task-button {
+    background: none;
+    border: none;
+    color: #ff3b30;
+    cursor: pointer;
 }
