@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body>
-    <div class="timer-container">
-        <div class="timer">
-            <span id="time-display">25:00</span>
+<body class="bg-black flex items-center justify-center min-h-screen">
+    <div class="bg-gradient-to-b from-black to-purple-900 rounded-lg border-2 border-purple-500 p-4 w-80 text-center">
+        <div class="flex justify-center space-x-2 mb-4">
+            <div id="current-time" class="bg-black text-white px-2 py-1 rounded flex items-center space-x-1">
+                <i class="fas fa-play"></i>
+                <span>25:00</span>
+            </div>
+            <div id="theme-toggle-button" class="bg-black text-white px-2 py-1 rounded flex items-center space-x-1 cursor-pointer">
+                <i class="fas fa-palette"></i>
+            </div>
+            <div class="bg-black text-white px-2 py-1 rounded flex items-center space-x-1">
+                <i class="fas fa-stopwatch"></i>
+                <span id="session-type">Session</span>
+            </div>
         </div>
-        <div class="controls">
-            <button id="start-button">Start</button>
-            <button id="pause-button">Pause</button>
-            <button id="reset-button">Reset</button>
+        <div class="text-6xl font-mono">
+            <span id="time-display" class="text-white">25:00</span>
+        </div>
+        <div class="mt-4 flex justify-center space-x-4">
+            <button id="toggle-button" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition">Start</button>
+            <button id="reset-button" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition">Reset</button>
+        </div>
+        <div class="mt-4 text-left">
+            <input type="text" id="task-input" placeholder="Add a task..." class="bg-gray-800 text-white w-full p-2 rounded mb-2">
+            <button id="add-task-button" class="bg-green-500 text-white w-full py-2 rounded hover:bg-green-600 transition">Add Task</button>
+            <ul id="task-list" class="mt-2 text-white"></ul>
         </div>
     </div>
     <script src="script.js"></script>
